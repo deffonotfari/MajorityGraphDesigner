@@ -1,0 +1,161 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* centered heading */
+.app-header h1,
+.app-header p {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.control-group {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.small-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  font-size: 0.85rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* all buttons pink */
+button {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #ffb8d6;
+  padding: 0.45rem;
+  background: #ffd6e7;
+  color: #111;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffc7df;
+}
+
+/* Space above and below all buttons */
+button {
+  margin: 0.35rem 0;
+}
+
+/* Extra spacing inside grouped panels (export, save, etc.) */
+.control-group button {
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+
+/* Tab buttons need smaller spacing so they still look like tabs */
+.tab-buttons button {
+  margin: 0;
+}
+
+
+/* ---- Tabs ---- */
+.tabs {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+}
+
+.tab-btn.active {
+  background: #fff;
+  border-bottom: 2px solid #ff99c6;
+}
+
+.tab-pane {
+  display: none;
+  padding: 0.9rem;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* canvas */
+.canvas-section {
+  border: 1px solid #ddd;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  background: #fff;
+}
+
+#graph-canvas {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* save/export area below graph */
+.below-graph {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.below-graph .control-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* edges table */
+.edges-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.edges-table th,
+.edges-table td {
+  border: 1px solid #ddd;
+  padding: 0.45rem;
+  text-align: center;
+}

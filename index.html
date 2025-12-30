@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Majority Graph Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Majority Graph Builder</h1>
+      <p>
+        Build majority graphs using LaTeX-like labels and export or save your work.
+      </p>
+    </header>
+
+    <!-- TOP CONTROLS -->
+    <section class="controls">
+      <div class="control-group small-group">
+        <h2>Add Node</h2>
+
+        <form id="node-form">
+          <label for="node-label">Node label</label>
+
+          <input
+            id="node-label"
+            type="text"
+            placeholder="e.g. λ_i, x^2, \frac{a}{b}"
+            autocomplete="off"
+            required
+          />
+
+          <button type="submit">Add Node</button>
+        </form>
+      </div>
+
+      <div class="control-group small-group">
+        <h2>Add Edge</h2>
+
+        <form id="edge-form">
+          <label>From</label>
+          <select id="from-node" required></select>
+
+          <label>To</label>
+          <select id="to-node" required></select>
+
+          <button type="submit">Add Edge</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <section class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="graph-tab">Graph</button>
+        <button class="tab-btn" data-tab="edges-tab">Edges</button>
+      </div>
+
+      <div class="tab-content">
+        <!-- GRAPH TAB -->
+        <div id="graph-tab" class="tab-pane active">
+          <div class="canvas-section">
+            <canvas id="graph-canvas" width="900" height="600"></canvas>
+          </div>
+
+          <!-- SAVE / EXPORT BELOW GRAPH -->
+          <div class="below-graph">
+            <div class="control-group">
+              <h3>Export</h3>
+              <button id="download-jpg">JPG</button>
+              <button id="download-png">PNG</button>
+              <button id="download-svg">SVG</button>
+              <button id="clear-graph">Clear Graph</button>
+            </div>
+
+            <div class="control-group">
+              <h3>Save</h3>
+              <button id="save-graph">Save</button>
+              <button id="load-graph">Load</button>
+              <input id="load-file" type="file" accept=".json" style="display:none" />
+            </div>
+          </div>
+        </div>
+
+        <!-- EDGES TAB -->
+        <div id="edges-tab" class="tab-pane">
+          <h2>Edges</h2>
+
+          <table class="edges-table">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="edges-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
